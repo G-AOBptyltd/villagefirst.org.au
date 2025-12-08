@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Services | Smiths Lake Village</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-blue: #1B365D; --navy-blue-light: #2B4A7D; --sky-blue: #5B9BD5; --sky-blue-light: #7BB3E0;
+      --golden-orange: #F5A623; --white: #FFFFFF; --off-white: #F7F9FC; --dark-gray: #374151; --black: #1F2937;
+      --font-primary: 'Open Sans', sans-serif; --font-heading: 'Roboto Slab', serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-primary); line-height: 1.6; color: var(--black); }
+    h1, h2 { font-family: var(--font-heading); color: var(--navy-blue); margin: 0 0 1rem; }
+    h1 { font-size: 2.5rem; } h2 { font-size: 1.5rem; }
+    p { margin: 0 0 1rem; }
+    a { color: var(--navy-blue); }
+    a:focus { outline: 3px solid var(--golden-orange); outline-offset: 2px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .site-header { background: var(--navy-blue); color: var(--white); padding: 1rem 0; }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .site-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--white); }
+    .site-logo svg { width: 48px; height: 48px; }
+    .site-title { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; margin: 0; }
+    .site-tagline { font-size: 0.875rem; opacity: 0.9; margin: 0; }
+    .nav-menu { display: flex; list-style: none; margin: 0; padding: 0; gap: 4px; flex-wrap: wrap; }
+    .nav-menu a { padding: 0.5rem 1rem; color: var(--white); text-decoration: none; border-radius: 4px; font-weight: 600; }
+    .nav-menu a:hover { background: var(--navy-blue-light); }
+    .nav-menu a[aria-current="page"] { background: var(--golden-orange); color: var(--navy-blue); }
+    .page-header { background: linear-gradient(135deg, var(--navy-blue), var(--navy-blue-light)); color: var(--white); padding: 4rem 0; text-align: center; }
+    .page-header h1 { color: var(--white); }
+    .content { padding: 4rem 0; max-width: 800px; margin: 0 auto; }
+    .coming-soon { background: var(--off-white); border-left: 4px solid var(--golden-orange); padding: 2rem; margin: 2rem 0; }
+    .back-link { display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: var(--golden-orange); color: var(--navy-blue); text-decoration: none; border-radius: 8px; font-weight: 600; }
+    .back-link:hover { background: #D4900F; }
+    .site-footer { background: var(--navy-blue); color: var(--white); padding: 2rem 0; text-align: center; }
+    .site-footer a { color: var(--sky-blue-light); }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2" fill="none"/><path d="M8 26 Q14 22, 20 26 T32 26 T44 26" stroke="#F5A623" stroke-width="2.5" fill="none"/><path d="M4 32 Q12 28, 20 32 T36 32 T48 32" stroke="#5B9BD5" stroke-width="2" fill="none"/><circle cx="24" cy="14" r="5" fill="#F5A623" opacity="0.6"/></svg>
+        <div><p class="site-title">Smiths Lake Village</p><p class="site-tagline">Pacific Palms Community</p></div>
+      </a>
+      <nav><ul class="nav-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/governance/">Governance</a></li>
+        <li><a href="/services/" aria-current="page">Services</a></li>
+        <li><a href="/planning/">Planning</a></li>
+        <li><a href="/environment/">Environment</a></li>
+        <li><a href="/history/">History</a></li>
+      </ul></nav>
+    </div>
+  </header>
+  <main>
+    <section class="page-header"><div class="container"><h1>Community Services</h1><p>Emergency contacts, health services, and local organisations</p></div></section>
+    <section class="content container">
+      <h2>Coming Soon</h2>
+      <p>Smiths Lake is a picturesque coastal village located in the Great Lakes region of New South Wales, approximately 300 kilometres north of Sydney. The village takes its name from the pristine lake that forms its centrepiece.</p>
+      <p>Home to approximately 1,300 permanent residents, Smiths Lake swells significantly during holiday periods as visitors discover the area's natural beauty. The community is known for its friendly, village atmosphere and strong environmental consciousness.</p>
+      <div class="coming-soon">
+        <h2>Content Coming Soon</h2>
+        <p>This section is being developed. Check back soon for detailed information about our village, demographics, amenities, and natural attractions.</p>
+      </div>
+      <a href="/" class="back-link">← Back to Home</a>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><p>© 2025 Pacific Palms Community Association (PPCA) | <a href="https://www.midcoast.nsw.gov.au/">MidCoast Council</a></p></div></footer>
+</body>
+</html>
