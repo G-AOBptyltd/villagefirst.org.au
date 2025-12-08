@@ -1,0 +1,153 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Enable editorial workflow for draft/review/publish stages (optional)
+# publish_mode: editorial_workflow
+
+# Media files will be stored in this folder
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# Site URL for preview
+site_url: https://villagefirst.com.au
+display_url: https://villagefirst.com.au
+logo_url: https://villagefirst.com.au/images/logo.svg
+
+# Collections define the structure for different content types
+collections:
+  # NEWS & UPDATES
+  - name: "news"
+    label: "News & Updates"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Summary", name: "summary", widget: "text", hint: "Brief description shown on news listing" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Category", name: "category", widget: "select", options: ["Community", "Environment", "Planning", "Services", "Governance", "Events"] }
+
+  # EVENTS
+  - name: "events"
+    label: "Community Events"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Event Name", name: "title", widget: "string" }
+      - { label: "Event Date", name: "event_date", widget: "datetime" }
+      - { label: "End Date", name: "end_date", widget: "datetime", required: false, hint: "For multi-day events" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Contact", name: "contact", widget: "string", required: false }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+
+  # MAIN PAGES
+  - name: "pages"
+    label: "Main Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/pages/home.md"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string", default: "Welcome to Smiths Lake Village" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Quick Stats", name: "quick_stats", widget: "list", fields: [
+              { label: "Number", name: "number", widget: "string" },
+              { label: "Label", name: "label", widget: "string" }
+            ]}
+      
+      - label: "About Our Area"
+        name: "about"
+        file: "content/pages/about.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+      
+      - label: "Governance & Admin"
+        name: "governance"
+        file: "content/pages/governance.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+          - { label: "Committee Members", name: "committee", widget: "list", required: false, fields: [
+              { label: "Name", name: "name", widget: "string" },
+              { label: "Role", name: "role", widget: "string" },
+              { label: "Email", name: "email", widget: "string", required: false }
+            ]}
+      
+      - label: "Community Services"
+        name: "services"
+        file: "content/pages/services.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - { label: "Emergency Contacts", name: "emergency", widget: "markdown" }
+          - { label: "Health Services", name: "health", widget: "markdown" }
+          - { label: "Other Services", name: "body", widget: "markdown" }
+      
+      - label: "Planning & Development"
+        name: "planning"
+        file: "content/pages/planning.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - { label: "Current Projects", name: "projects", widget: "markdown" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+      
+      - label: "Environment & Sustainability"
+        name: "environment"
+        file: "content/pages/environment.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+      
+      - label: "History & Culture"
+        name: "history"
+        file: "content/pages/history.md"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Introduction", name: "intro", widget: "markdown" }
+          - { label: "Indigenous Heritage", name: "indigenous", widget: "markdown" }
+          - { label: "Settlement History", name: "settlement", widget: "markdown" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
+
+  # DOCUMENTS LIBRARY
+  - name: "documents"
+    label: "Document Library"
+    folder: "content/documents"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Document Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Category", name: "category", widget: "select", options: ["Governance", "Planning", "Environment", "Community", "Finance", "Minutes", "Reports"] }
+      - { label: "Document File", name: "file", widget: "file" }
+      - { label: "Date Added", name: "date", widget: "datetime" }
+
+  # SITE SETTINGS
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "content/settings/general.md"
+        fields:
+          - { label: "Site Title", name: "site_title", widget: "string", default: "Smiths Lake Village" }
+          - { label: "Site Tagline", name: "tagline", widget: "string", default: "Pacific Palms Community" }
+          - { label: "Contact Email", name: "contact_email", widget: "string" }
+          - { label: "Footer Copyright", name: "copyright", widget: "string" }
+      
+      - label: "Emergency Information"
+        name: "emergency"
+        file: "content/settings/emergency.md"
+        fields:
+          - { label: "Emergency Alert Active", name: "alert_active", widget: "boolean", default: false }
+          - { label: "Alert Message", name: "alert_message", widget: "text", required: false }
+          - { label: "Alert Type", name: "alert_type", widget: "select", options: ["info", "warning", "danger"], default: "info" }
