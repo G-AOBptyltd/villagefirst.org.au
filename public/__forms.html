@@ -1,0 +1,42 @@
+<!--
+  This file helps Netlify detect forms during build.
+  It won't be visible to users but ensures forms are registered.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Definitions</title>
+</head>
+<body>
+  <!-- Contact Form -->
+  <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="name" />
+    <input name="email" />
+    <input name="phone" />
+    <input name="subject" />
+    <textarea name="message"></textarea>
+  </form>
+  
+  <!-- Feedback Form -->
+  <form name="feedback" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="name" />
+    <input name="email" />
+    <input name="category" />
+    <input name="title" />
+    <textarea name="details"></textarea>
+    <input name="priority" />
+  </form>
+  
+  <!-- Newsletter Form -->
+  <form name="newsletter" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="first-name" />
+    <input name="last-name" />
+    <input name="email" />
+    <input name="resident-type" />
+    <input name="privacy-consent" type="checkbox" />
+  </form>
+</body>
+</html>
