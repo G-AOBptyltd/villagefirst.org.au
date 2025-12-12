@@ -32,11 +32,39 @@
     .page-header { background: linear-gradient(135deg, var(--navy-blue), var(--navy-blue-light)); color: var(--white); padding: 4rem 0; text-align: center; }
     .page-header h1 { color: var(--white); }
     .content { padding: 4rem 0; max-width: 800px; margin: 0 auto; }
-    .coming-soon { background: var(--off-white); border-left: 4px solid var(--golden-orange); padding: 2rem; margin: 2rem 0; }
     .back-link { display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: var(--golden-orange); color: var(--navy-blue); text-decoration: none; border-radius: 8px; font-weight: 600; }
     .back-link:hover { background: #D4900F; }
     .site-footer { background: var(--navy-blue); color: var(--white); padding: 2rem 0; text-align: center; }
     .site-footer a { color: var(--sky-blue-light); }
+    
+    /* Document Library Styles */
+    .documents-section {
+      background: var(--off-white);
+      border-left: 4px solid var(--sky-blue);
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .documents-section h2 {
+      margin-top: 0;
+    }
+    .drive-embed-container {
+      margin: 1.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--white);
+    }
+    .drive-embed-container iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+    }
+    .documents-note {
+      font-size: 0.875rem;
+      color: var(--dark-gray);
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -57,19 +85,44 @@
       </ul></nav>
     </div>
   </header>
+  
   <main>
-    <section class="page-header"><div class="container"><h1>About Our Area</h1><p>Discover Smiths Lake and the Pacific Palms region</p></div></section>
+    <section class="page-header">
+      <div class="container">
+        <h1>About Our Area</h1>
+        <p>Discover Smiths Lake and the Pacific Palms region</p>
+      </div>
+    </section>
+    
     <section class="content container">
       <h2>Welcome to Smiths Lake Village</h2>
       <p>Smiths Lake is a picturesque coastal village located in the Great Lakes region of New South Wales, approximately 300 kilometres north of Sydney. The village takes its name from the pristine lake that forms its centrepiece.</p>
       <p>Home to approximately 1,300 permanent residents, Smiths Lake swells significantly during holiday periods as visitors discover the area's natural beauty. The community is known for its friendly, village atmosphere and strong environmental consciousness.</p>
-      <div class="coming-soon">
-        <h2>Content Coming Soon</h2>
-        <p>This section is being developed. Check back soon for detailed information about our village, demographics, amenities, and natural attractions.</p>
+      
+      <!-- Document Library with Google Drive Embed -->
+      <div class="documents-section">
+        <h2>📁 Document Library</h2>
+        <p>Access official PPCA documents, community plans, and reference materials. Click any document to view or download.</p>
+        
+        <div class="drive-embed-container">
+          <iframe 
+            src="https://drive.google.com/embeddedfolderview?id=1cxYAx-Mm-ysdM_UU_0IRThVFUZ4w61bv#list"
+            title="About Us Documents"
+            loading="lazy"
+          ></iframe>
+        </div>
+        
+        <p class="documents-note"><em>Documents are managed by PPCA committee members. Files added to the folder appear here automatically.</em></p>
       </div>
+      
       <a href="/" class="back-link">← Back to Home</a>
     </section>
   </main>
-  <footer class="site-footer"><div class="container"><p>© 2025 Pacific Palms Community Association (PPCA) | <a href="https://www.midcoast.nsw.gov.au/">MidCoast Council</a></p></div></footer>
+  
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Pacific Palms Community Association (PPCA) | <a href="https://www.midcoast.nsw.gov.au/">MidCoast Council</a></p>
+    </div>
+  </footer>
 </body>
 </html>
